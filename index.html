@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Scientific Writing Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app-container">
+        <!-- شاشة الرئيسية -->
+        <div id="home-screen" class="screen active">
+            <h1 class="main-title">Scientific Writing<br>Master</h1>
+            <div id="lectures-list" class="lectures-container"></div>
+
+            <div id="home-footer">
+                <p class="created-by">This website was created by</p>
+                <p class="author-name">𝓐𝓱𝓶𝓮𝓭 𝓜𝓸𝓼𝓽𝓪𝓯𝓪</p>
+            </div>
+        </div>
+
+        <!-- شاشة المراجعة -->
+        <div id="revision-screen" class="screen">
+            <div class="rev-header">
+                <h2 id="rev-title">Revision</h2>
+                <button type="button" class="close-btn" onclick="goHome()" aria-label="Close">✕</button>
+            </div>
+            <div id="mindmap-board" class="mindmap-board"></div>
+        </div>
+
+        <!-- شاشة الكويز -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <button type="button" class="close-btn" onclick="goHome()" aria-label="Close">✕</button>
+                <div class="progress-bar-bg">
+                    <div id="bar" class="progress-bar-fill"></div>
+                </div>
+                <div id="counter" class="quiz-counter">0 / 0</div>
+            </div>
+            <div id="round-info">Round (1)</div>
+            <div class="question-box">
+                <div id="q-txt">...</div>
+            </div>
+            <div class="options-container" id="opt-box"></div>
+            
+            <!-- صندوق التوضيح والـ Hint البرتقالي -->
+            <div id="hint-box" class="quiz-hint-box"></div>
+
+            <div class="footer">
+                <button type="button" id="prev-btn" class="nav-btn prev" onclick="goPrev()">Prev</button>
+                <button type="button" id="next-btn" class="nav-btn next" onclick="goNext()">Next</button>
+            </div>
+        </div>
+
+        <!-- نافذة الفوز -->
+        <div id="win-overlay" class="overlay">
+            <div class="dialog">
+                <h1 class="win-title">🎉</h1>
+                <p id="win-msg" class="win-text">Great Job!</p>
+                <button type="button" id="home-btn" class="btn-main" onclick="closeWinOverlay()">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- زر تبديل اللغة (ثابت دائماً في اليمين) -->
+    <button type="button" id="lang-fab" onclick="toggleLanguage()" aria-label="Switch Language">EN</button>
+
+    <script>
+        let allLectures = [];
+    </script>
+
+    <!-- ملفات البيانات -->
+    <script src="data_unit1.js"></script>
+    <script src="data_unit2.js"></script>
+    <script src="data_unit3.js"></script>
+    <script src="data_unit4.js"></script>
+    <script src="data_unit5.js"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
